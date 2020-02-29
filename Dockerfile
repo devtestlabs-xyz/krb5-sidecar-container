@@ -1,5 +1,5 @@
 # Official Alpine Linux image
-FROM alpine:3.10.3
+FROM alpine:3.11.3
 
 LABEL maintainer="Ryan Craig"
 
