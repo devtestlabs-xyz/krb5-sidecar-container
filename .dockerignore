@@ -1,0 +1,30 @@
+# ignore dockerfile
+Dockerfile
+Dockerfile-*
+
+# ignore .git, .cache, and .DS_Store directories
+.git
+.cache
+.DS_Store
+
+# ignore .gitignore
+.gitignore
+
+# ignore .drone.[yml | yaml]
+.drone.yml
+.drone.yaml
+
+# ignore all markdown files
+*.markdown
+*.md
+**/*.md
+
+# ignore all asciidoc files
+*.asciidoc
+*.adoc
+*.asc
+
+# ignore all text files
+*.txt
+
+.github/
