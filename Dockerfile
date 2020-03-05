@@ -43,6 +43,7 @@ RUN set -x && \
     rm -f /etc/krb5.conf && mkdir /etc/krb5.conf.d && \
     \
     echo "===> Cleaning up..."  && \
+    chmod +x /usr/local/bin/entrypoint.sh && \
     unset http_proxy https_proxy
 
 VOLUME ["/krb5"]
