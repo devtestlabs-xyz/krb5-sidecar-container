@@ -21,7 +21,7 @@ The published OCI container image is based on the [official Alpine Linux Docker 
 The OCI image is currently published to https://hub.docker.com/u/devtestlabs/krb5-sidecar-container.
 
 ```
-docker pull devtestlabs/krb5-sidecar-container
+docker pull devtestlabs/krb5-sidecar
 ```
 
 ## Run a container
@@ -105,7 +105,7 @@ docker run \
 --name krb5-sidecar \
 --mount type=bind,source="$(pwd)"/krb5,target=/krb5 \
 --env-file conf/.env.test \
-devtestlabs/krb5-kinit-sidecar:latest 
+devtestlabs/krb5-sidecar:latest 
 ```
 
 ### Run a detached container 
