@@ -1,5 +1,5 @@
 # Official Alpine Linux image
-FROM alpine:3.11.3
+FROM alpine:3.11.6
 
 LABEL maintainer="Ryan Craig"
 
@@ -29,22 +29,22 @@ ENV APK_PACKAGES \
 COPY scripts/entrypoint.sh /usr/local/bin
 RUN ln -s /usr/local/bin/entrypoint.sh / # backwards compat
 
-RUN set -x && \
-    \
-    env && \
-    \
-    echo "==> Upgrading apk and system..."  && \
-    apk update && apk upgrade && \
-    \
-    echo "==> Installing required packages..."  && \
-    apk add --no-cache ${APK_PACKAGES} && \
-    \
-    echo "===> Removing default KRB5 config file and provisioning custom config path..." && \
-    rm -f /etc/krb5.conf && mkdir /etc/krb5.conf.d && \
-    \
-    echo "===> Cleaning up..."  && \
-    chmod +x /usr/local/bin/entrypoint.sh && \
-    unset http_proxy https_proxy
+RUN set -x \
+    && \
+    env \
+    && \
+    echo "==> Upgrading apk and system..." \
+    && apk update && apk upgrade \
+    && \
+    echo "==> Installing required packages..." \
+    && apk add --no-cache ${APK_PACKAGES} \
+    && \
+    echo "===> Removing default KRB5 config file and provisioning custom config path..." \
+    && rm -f /etc/krb5.conf && mkdir /etc/krb5.conf.d \
+    && \
+    echo "===> Cleaning up..." \
+    && chmod +x /usr/local/bin/entrypoint.sh \
+    && unset http_proxy https_proxy
 
 VOLUME ["/krb5"]
 
